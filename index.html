@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nevin — Finance & Accounting</title>
+<title>Nevin Rutabanzibwa — Finance & Accounting</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -39,18 +39,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NOISE TEXTURE OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.5;
-  }
-
-  /* ── DECORATIVE GRID LINES ── */
   body::after {
     content: '';
     position: fixed;
@@ -63,7 +51,7 @@
     z-index: 0;
   }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -72,7 +60,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 3rem;
-    background: rgba(10, 15, 30, 0.85);
+    background: rgba(10, 15, 30, 0.9);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(201,168,76,0.1);
   }
@@ -102,7 +90,7 @@
 
   .nav-links a:hover { color: var(--gold); }
 
-  /* ── HERO ── */
+  /* HERO */
   #hero {
     position: relative;
     z-index: 1;
@@ -229,7 +217,7 @@
     transform-origin: left;
   }
 
-  /* ── SECTION BASE ── */
+  /* SECTION BASE */
   section {
     position: relative;
     z-index: 1;
@@ -265,7 +253,7 @@
     background: linear-gradient(to right, var(--navy-border), transparent);
   }
 
-  /* ── ABOUT ── */
+  /* ABOUT */
   #about .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -311,7 +299,7 @@
     color: var(--text-muted);
   }
 
-  /* ── TRACKS ── */
+  /* TRACKS */
   #tracks .tracks-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -324,7 +312,6 @@
     background: var(--navy-mid);
     padding: 2.5rem 2rem;
     transition: background 0.3s;
-    cursor: default;
   }
 
   .track-card:hover { background: var(--navy-light); }
@@ -367,7 +354,7 @@
     background: var(--gold-dim2);
   }
 
-  /* ── PROJECTS ── */
+  /* PROJECTS */
   #projects .projects-list {
     display: flex;
     flex-direction: column;
@@ -389,7 +376,6 @@
   }
 
   .project-row:hover { background: var(--navy-light); }
-
   .project-row:hover .proj-arrow { transform: translateX(4px); color: var(--gold); }
 
   .proj-title {
@@ -432,13 +418,25 @@
     text-transform: uppercase;
     padding: 0.18rem 0.55rem;
     border: 1px solid;
+    white-space: nowrap;
   }
 
   .proj-status.complete { color: #6dbf8a; border-color: rgba(109,191,138,0.3); background: rgba(109,191,138,0.06); }
   .proj-status.progress { color: var(--gold); border-color: var(--gold-dim); background: var(--gold-dim2); }
   .proj-status.planned  { color: var(--text-muted); border-color: var(--navy-border); background: transparent; }
 
-  /* ── SKILLS ── */
+  .project-placeholder {
+    opacity: 0.38;
+    pointer-events: none;
+    border-left: 2px dashed var(--navy-border);
+  }
+
+  .project-placeholder .proj-title {
+    font-style: italic;
+    color: var(--text-muted);
+  }
+
+  /* SKILLS */
   #skills .skills-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -487,10 +485,8 @@
     flex-shrink: 0;
   }
 
-  /* ── CONTACT ── */
-  #contact {
-    border-top: 1px solid var(--navy-border);
-  }
+  /* CONTACT */
+  #contact { border-top: 1px solid var(--navy-border); }
 
   #contact .contact-inner {
     display: flex;
@@ -499,7 +495,7 @@
     gap: 3rem;
   }
 
-  .contact-left .contact-heading {
+  .contact-heading {
     font-family: var(--serif);
     font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 300;
@@ -507,7 +503,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .contact-left .contact-heading em {
+  .contact-heading em {
     font-style: italic;
     color: var(--gold);
   }
@@ -540,7 +536,7 @@
     min-width: 72px;
   }
 
-  /* ── FOOTER ── */
+  /* FOOTER */
   footer {
     position: relative;
     z-index: 1;
@@ -556,13 +552,12 @@
     color: var(--text-muted);
   }
 
-  footer span em {
+  footer em {
     font-style: italic;
     font-family: var(--serif);
     color: rgba(201,168,76,0.5);
   }
 
-  /* ── DIVIDER ── */
   .gold-divider {
     width: 40px;
     height: 1px;
@@ -571,7 +566,7 @@
     opacity: 0.6;
   }
 
-  /* ── ANIMATIONS ── */
+  /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -593,9 +588,10 @@
     transform: translateY(0);
   }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
     section { padding: 4rem 1.5rem; }
     #hero { padding: 0 1.5rem; }
     #about .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -631,7 +627,7 @@
   <p class="hero-desc">Building institutional-grade analytical skills across finance, accounting, and consulting — one project at a time.</p>
   <div class="hero-cta">
     <a href="#projects" class="btn-primary">View Projects</a>
-    <a href="#contact" class="btn-ghost">Get in Touch</a>
+    <a href="https://www.linkedin.com/in/nevruta" target="_blank" class="btn-ghost">LinkedIn</a>
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
@@ -649,9 +645,9 @@
   <div class="about-grid">
     <div class="reveal">
       <div class="gold-divider"></div>
-      <p>I'm an incoming Finance &amp; Accounting student at Xavier University, building a foundation in financial modeling, accounting principles, and consulting frameworks before day one of my freshman year.</p>
+      <p>I'm Nevin Rutabanzibwa — an incoming Finance &amp; Accounting student at Xavier University, building a foundation in financial modeling, accounting principles, and consulting frameworks before day one of my freshman year.</p>
       <p>My work is shaped by a conviction that discipline and preparation compound — the same way interest does. Every project here is deliberate practice: real scenarios, real outputs, real standards.</p>
-      <p>Long-term, I'm building toward Big 4 accounting, CPA licensure, and eventually corporate law — rooted in the principle that excellence is a daily commitment, not a destination.</p>
+      <p>Long-term, I'm building toward Big 4 accounting, CPA licensure, and eventually corporate law — alongside involvement in the McKinsey Forward Program and leadership roles in the Xavier BSA and SWAVE. Rooted in the principle that excellence is a daily commitment, not a destination.</p>
     </div>
     <div class="about-stats reveal">
       <div class="stat-card">
@@ -659,16 +655,16 @@
         <div class="stat-label">Project Tracks</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">Live Projects</div>
+        <div class="stat-number">3</div>
+        <div class="stat-label">Active Projects</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">'29</div>
         <div class="stat-label">Xavier University</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">XU</div>
-        <div class="stat-label">Cincinnati, OH</div>
+        <div class="stat-number">Big 4</div>
+        <div class="stat-label">Target Pipeline</div>
       </div>
     </div>
   </div>
@@ -685,7 +681,7 @@
     <div class="track-card">
       <div class="track-icon">F/</div>
       <h3 class="track-name">Finance</h3>
-      <p class="track-desc">Equity research, financial modeling, and company analysis across public market companies. Institutional-grade Excel models built from scratch.</p>
+      <p class="track-desc">Equity research and financial modeling across public market companies. Institutional-grade Excel models — DCF, hybrid valuation, and commodity-driven analysis — built from scratch.</p>
       <div class="track-tags">
         <span class="tag">DCF Modeling</span>
         <span class="tag">Equity Research</span>
@@ -696,7 +692,7 @@
     <div class="track-card">
       <div class="track-icon">A/</div>
       <h3 class="track-name">Accounting</h3>
-      <p class="track-desc">Full-cycle accounting practice through Maple &amp; Co., a self-directed externship spanning journal entries, financial statements, and cost analysis.</p>
+      <p class="track-desc">Full-cycle accounting practice through Maple &amp; Co., a self-directed externship spanning 55+ journal entries, adjusting entries, financial statements, and inventory cost analysis.</p>
       <div class="track-tags">
         <span class="tag">Journal Entries</span>
         <span class="tag">FIFO / LIFO</span>
@@ -707,11 +703,11 @@
     <div class="track-card">
       <div class="track-icon">C/</div>
       <h3 class="track-name">Consulting</h3>
-      <p class="track-desc">Structured problem-solving, case frameworks, and business analysis. Projects designed around real client scenarios with professional deliverables.</p>
+      <p class="track-desc">Structured problem-solving, case frameworks, and strategic business analysis. Projects designed around real client scenarios with executive-style deliverables and recommendations.</p>
       <div class="track-tags">
         <span class="tag">Case Frameworks</span>
-        <span class="tag">Business Analysis</span>
-        <span class="tag">Deliverables</span>
+        <span class="tag">SWOT Analysis</span>
+        <span class="tag">McKinsey Forward</span>
         <span class="tag">Strategy</span>
       </div>
     </div>
@@ -727,50 +723,40 @@
   </div>
   <div class="projects-list reveal">
 
-    <a href="#" class="project-row">
+    <div class="project-row project-placeholder">
       <div>
-        <div class="proj-title">AAPL Financial Model</div>
-        <div class="proj-sub">3-statement model — Income Statement, Balance Sheet, Cash Flow</div>
+        <div class="proj-title">Finance Project — Coming Soon</div>
+        <div class="proj-sub">Equity research, valuation, or financial modeling project · In development</div>
       </div>
       <div class="proj-track">Finance</div>
-      <div class="proj-tools">Excel · CFI Framework</div>
-      <span class="proj-status complete">Complete</span>
-    </a>
+      <div class="proj-tools">Excel · TBD</div>
+      <span class="proj-status planned">Planned</span>
+    </div>
 
-    <a href="#" class="project-row">
+    <div class="project-row project-placeholder">
       <div>
-        <div class="proj-title">Goldman Sachs Model</div>
-        <div class="proj-sub">Financial services sector analysis and valuation</div>
+        <div class="proj-title">Finance Project — Coming Soon</div>
+        <div class="proj-sub">Equity research, valuation, or financial modeling project · In development</div>
       </div>
       <div class="proj-track">Finance</div>
-      <div class="proj-tools">Excel · Valuation</div>
-      <span class="proj-status complete">Complete</span>
-    </a>
+      <div class="proj-tools">Excel · TBD</div>
+      <span class="proj-status planned">Planned</span>
+    </div>
 
-    <a href="#" class="project-row">
+    <a href="__Maple_Co_Journal_Entries.xlsx" class="project-row" download>
       <div>
-        <div class="proj-title">ExxonMobil Model</div>
-        <div class="proj-sub">Energy sector financial modeling and commodity exposure</div>
-      </div>
-      <div class="proj-track">Finance</div>
-      <div class="proj-tools">Excel · Sector Analysis</div>
-      <span class="proj-status complete">Complete</span>
-    </a>
-
-    <a href="#" class="project-row">
-      <div>
-        <div class="proj-title">Maple &amp; Co. Externship</div>
-        <div class="proj-sub">55+ journal entries, adjusting entries, full accounting cycle</div>
+        <div class="proj-title">Maple &amp; Co. — Accounting Externship</div>
+        <div class="proj-sub">55+ journal entries, adjusting entries, full accounting cycle · CFI Platform</div>
       </div>
       <div class="proj-track">Accounting</div>
-      <div class="proj-tools">CFI · Excel</div>
+      <div class="proj-tools">Excel · CFI</div>
       <span class="proj-status progress">In Progress</span>
     </a>
 
     <a href="#" class="project-row">
       <div>
         <div class="proj-title">Inventory Costing Analysis</div>
-        <div class="proj-sub">FIFO, LIFO, Weighted Average — TRC Corporation case study</div>
+        <div class="proj-sub">FIFO, LIFO, Weighted Average — TRC Corporation managerial accounting case</div>
       </div>
       <div class="proj-track">Accounting</div>
       <div class="proj-tools">Managerial Accounting</div>
@@ -780,7 +766,7 @@
     <a href="#" class="project-row">
       <div>
         <div class="proj-title">Summer Externship Capstone</div>
-        <div class="proj-sub">INT1 Full Company Deep Dive — Finance, Accounting &amp; Consulting</div>
+        <div class="proj-sub">INT1 Full Company Deep Dive — Finance, Accounting &amp; Consulting integrated analysis</div>
       </div>
       <div class="proj-track">Consulting</div>
       <div class="proj-tools">Notion · Excel · Frameworks</div>
@@ -804,7 +790,7 @@
         <li>3-Statement Models</li>
         <li>DCF Valuation</li>
         <li>Comparable Analysis</li>
-        <li>Scenario Analysis</li>
+        <li>Hybrid Valuation</li>
         <li>Sensitivity Tables</li>
       </ul>
     </div>
@@ -819,23 +805,23 @@
       </ul>
     </div>
     <div class="skill-block">
-      <div class="skill-category">Tools</div>
+      <div class="skill-category">Tools & Platforms</div>
       <ul class="skill-list">
         <li>Microsoft Excel</li>
-        <li>Notion</li>
+        <li>Bloomberg Terminal</li>
         <li>CFI Platform</li>
-        <li>Google Sheets</li>
+        <li>Notion</li>
         <li>PowerPoint</li>
       </ul>
     </div>
     <div class="skill-block">
-      <div class="skill-category">Foundations</div>
+      <div class="skill-category">Business & Strategy</div>
       <ul class="skill-list">
-        <li>Financial Statements</li>
+        <li>Equity Research</li>
         <li>GAAP Principles</li>
-        <li>Business Analysis</li>
         <li>Case Frameworks</li>
-        <li>Research & Writing</li>
+        <li>SWOT Analysis</li>
+        <li>McKinsey Forward</li>
       </ul>
     </div>
   </div>
@@ -851,24 +837,24 @@
   <div class="contact-inner reveal">
     <div class="contact-left">
       <h3 class="contact-heading">Let's connect<br><em>and build.</em></h3>
-      <a href="#" class="btn-primary">Download Résumé</a>
+      <a href="https://docs.google.com/document/d/16UV_QLSJ_TzrqoY-W5Dy8eg1Y0_eLVpyGeP4Wb5Z4SI/edit" target="_blank" class="btn-primary">View Résumé</a>
     </div>
     <div class="contact-links">
       <a href="mailto:nevnevruta@gmail.com" class="contact-link">
         <span class="contact-link-label">Email</span>
         nevnevruta@gmail.com
       </a>
-      <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">
+      <a href="https://www.linkedin.com/in/nevruta" target="_blank" class="contact-link">
         <span class="contact-link-label">LinkedIn</span>
-        linkedin.com/in/yourprofile
+        linkedin.com/in/nevruta
       </a>
-      <a href="https://github.com/nevfinance" class="contact-link" target="_blank">
+      <a href="https://github.com/nevnevruta" target="_blank" class="contact-link">
         <span class="contact-link-label">GitHub</span>
-        github.com/nevfinance
+        github.com/nevnevruta
       </a>
       <a href="#" class="contact-link">
         <span class="contact-link-label">Location</span>
-        Cincinnati, OH
+        Cincinnati, OH · North Potomac, MD
       </a>
     </div>
   </div>
@@ -876,7 +862,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <span>© 2026 Nevin. All rights reserved.</span>
+  <span>© 2026 Nevin Rutabanzibwa. All rights reserved.</span>
   <span><em>Ad majorem Dei gloriam</em></span>
 </footer>
 
